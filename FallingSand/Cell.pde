@@ -102,6 +102,7 @@ class Cell
     case "top":
       if (i > 0)
       {
+        verify[i-1][j] = true;
         next[i][j] = grid[i-1][j].factory(i,j);
         next[i-1][j] = this.factory(i-1,j);
       }
@@ -110,6 +111,7 @@ class Cell
     case "tright":
       if (i > 0 && j < cols - 1)
       {
+        verify[i-1][j+1] = true;
         next[i][j] = grid[i-1][j+1].factory(i,j);
         next[i-1][j+1] = this.factory(i-1,j+1);
       }
@@ -163,6 +165,7 @@ class Cell
     case "tleft":
       if (i > 0 && j > 0)
       {
+        verify[i-1][j-1] = true;
         next[i][j] = grid[i-1][j-1].factory(i,j);
         next[i-1][j-1] = this.factory(i-1,j-1);
       }
